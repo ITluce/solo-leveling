@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --system-blue: #00A8FF;
+  --system-dark: #1A1A1A;
+  --system-border: #2C3E50;
+}
+
+body {
+  @apply bg-black text-white font-sans;
+  background-image: linear-gradient(to bottom, #1A1A1A, #000000);
+}
+
+.system-border {
+  @apply relative;
+  border: 2px solid var(--system-blue);
+  box-shadow: 0 0 15px rgba(0, 168, 255, 0.3);
+}
+
+.system-border::before,
+.system-border::after {
+  content: '';
+  @apply absolute w-4 h-4;
+  border: 2px solid var(--system-blue);
+  box-shadow: 0 0 10px rgba(0, 168, 255, 0.5);
+}
+
+.system-border::before {
+  @apply top-0 left-0;
+  border-right: none;
+  border-bottom: none;
+}
+
+.system-border::after {
+  @apply bottom-0 right-0;
+  border-left: none;
+  border-top: none;
+}
+
+.system-text {
+  color: var(--system-blue);
+  text-shadow: 0 0 10px rgba(0, 168, 255, 0.5);
+}
+
+.quest-card {
+  @apply system-border bg-opacity-20 backdrop-blur-sm;
+  background: linear-gradient(145deg, rgba(0, 168, 255, 0.1), rgba(0, 0, 0, 0.3));
+}
